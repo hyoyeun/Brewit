@@ -1,0 +1,9 @@
+{
+    "name": "Brewit",
+    "short_name": "Brewit",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#ffffff",
+    "theme_color": "#131313",
+    "icons": []
+}

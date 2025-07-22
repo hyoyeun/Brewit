@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { Route, Routes } from 'react-router-dom'
 import './App.css'
 import LoginPage from './pages/LoginPage'
@@ -20,6 +20,14 @@ import TermsPage from './pages/TermsPage'
 
 
 function App() {
+
+  useEffect(() => {
+    const link = document.createElement('link')
+    link.rel = 'manifest'
+    link.href = '/manifest.json'
+    document.head.appendChild(link)
+  }, [])
+
 
   return (
     <>
