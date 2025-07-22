@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { Route, Routes } from 'react-router-dom'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import './App.css'
 import Header from './components/Header'
 import LoginPage from './pages/LoginPage'
@@ -32,6 +32,7 @@ function App() {
 
   return (
     <>
+      
       <Header />
       <Routes>
         <Route path="/" element={<LoginPage />} />
