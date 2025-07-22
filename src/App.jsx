@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import { Route, Routes } from 'react-router-dom'
 import './App.css'
+import Header from './components/Header'
 import LoginPage from './pages/LoginPage'
 import CartPage from './pages/CartPage'
 import CheckoutPage from './pages/CheckoutPage'
@@ -31,6 +32,7 @@ function App() {
 
   return (
     <>
+      <Header />
       <Routes>
         <Route path="/" element={<LoginPage />} />
         <Route path="/find-id" element={<FindUsernamePage />} />

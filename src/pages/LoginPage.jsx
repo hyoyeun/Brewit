@@ -1,20 +1,12 @@
-import logo from "./../../public/images/로고.JPG"
+
 
 
 function LoginPage() {
   return (
-    <div className="flex flex-col justify-center items-center w-full h-fit ">
-      <div className="flex flex-col justify-center items-center w-full h-[48px] ">
-        <div className="flex flex-col w-full h-full pl-[10px] pb-[8px] pt-[24px]
-        ">
-          <div className="flex justify-center items-start w-[10vw] h-[80vh] ">
-            <img alt="logo" src={logo} className="min-w-[52px] min-h-[15px]  " />
-          </div>
-        </div>
-      </div>
-
-
-      <div className="flex flex-col justify-center items-center w-full h-auto my-[53px] p-[16px]">
+    <div className="flex flex-col justify-center items-center w-full h-fit">
+      
+      {/* 소개글 */}
+      <div className="flex flex-col justify-center items-center w-full h-auto my-[53px] p-[16px] max-w-96">
         <div className="flex flex-col items-start  w-full h-auto  text-c-b gap-4">
           <div className="flex flex-col">
             <p className="font-[500] text-2xl">
@@ -23,10 +15,11 @@ function LoginPage() {
             </p>
           </div>
           <div className="flex justify-start">
-            <p className="font-[500] text-xs">회원서비스를 위해 로그인 해주세요.</p>
+            <p className="font-[500] text-xs  text-c-b6">회원서비스를 위해 로그인 해주세요.</p>
           </div>
         </div>
 
+        {/* 아이디 비번 입력창 */}
         <div className="flex flex-col w-full h-auto justify-center items-start my-[74px] gap-[32px] text-c-b">
           <div>
             <p className="text-xs hidden">아이디</p>
@@ -38,7 +31,8 @@ function LoginPage() {
           </div>
         </div>
 
-        <div className="flex flex-row my-[12px] items-start justify-center gap-1  text-c-bfont-[500] font-normal w-fit">
+        {/* 아이디 비번찾기 회원가입 */}
+        <div className="flex flex-row my-[12px] gap-1  text-c-bfont-[500] font-normal w-fit text-c-b8">
           <p className="text-xs">아이디 찾기</p>
           <p className="text-xs">ㅣ</p>
           <p className="text-xs">비밀번호 찾기</p>
@@ -46,6 +40,7 @@ function LoginPage() {
           <p className="text-xs">회원가입</p>
         </div>
 
+        {/* 로그인 버튼 */}
         <div className="flex flex-col mt-[240px]">
           <button>로그인 하기</button>
         </div>

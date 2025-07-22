@@ -14,12 +14,12 @@ body {
 input {
   background-color: transparent;
   border: none;
-  border-bottom: 1px solid #131313;
+  border-bottom: 1px solid rgba(19, 19, 19, 0.4);
   padding-bottom: 8px;
 }
 
 input::placeholder {
-  color: #131313;
+  color: rgba(19, 19, 19, 0.8);
   font-size: 12px;
 }
 
@@ -34,4 +34,10 @@ button {
   min-width: 328px;
   min-height: 46px;
   border-radius: 4px;
+}
+
+button text {
+  font-weight: 500;
+  color: rgba(19, 19, 19);
+  font-size: 15px;
 }

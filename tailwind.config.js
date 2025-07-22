@@ -1,7 +1,7 @@
 export default {
   content: [
-       "./index.html",
-    "./src/**/*.{js,jsx,ts,tsx}", 
+    "./index.html",
+    "./src/**/*.{js,jsx,ts,tsx}",
   ],
   theme: {
     extend: {
@@ -9,7 +9,9 @@ export default {
         // 커스텀 컬러 지정 
         'l-y': '#FFC21C',   // 연노랑
         'c-b': '#131313',  // 텍스트용 블랙
-        
+        'c-b8': 'rgba(19, 19, 19, 0.8)',
+        'c-b6': 'rgba(19, 19, 19, 0.6)', 
+        'c-b4': 'rgba(19, 19, 19, 0.4)',
 
 
       },
