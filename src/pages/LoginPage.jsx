@@ -1,10 +1,10 @@
-
+import { Link } from "react-router-dom"
 
 
 function LoginPage() {
   return (
     <div className="flex flex-col justify-center items-center w-full h-fit">
-      
+
       {/* 소개글 */}
       <div className="flex flex-col justify-center items-center w-full h-auto my-[53px] p-[16px] max-w-96">
         <div className="flex flex-col items-start  w-full h-auto  text-c-b gap-4">
@@ -33,11 +33,11 @@ function LoginPage() {
 
         {/* 아이디 비번찾기 회원가입 */}
         <div className="flex flex-row my-[12px] gap-1  text-c-bfont-[500] font-normal w-fit text-c-b8">
-          <p className="text-xs">아이디 찾기</p>
+          <Link to={"/find-id"}><p className="text-xs">아이디 찾기</p></Link>
           <p className="text-xs">ㅣ</p>
-          <p className="text-xs">비밀번호 찾기</p>
+          <Link to={"/find-password"}> <p className="text-xs">비밀번호 찾기</p></Link>
           <p className="text-xs">ㅣ</p>
-          <p className="text-xs">회원가입</p>
+          <Link to={"/signup"}><p className="text-xs">회원가입</p></Link>
         </div>
 
         {/* 로그인 버튼 */}
