@@ -23,7 +23,8 @@ function HomePage() {
                 </div>
             </div>
 
-            <div className="flex flex-row flex-wrap justify-start items-start mt-[17px] w-[360px] h-fit text-c-b">
+            {/* 홈 메뉴 영역 */}
+            <div className="flex flex-row flex-wrap justify-start items-start mt-[17px] w-[360px] h-fit text-c-b pb-[250px]">
                 <div className="flex flex-row flex-wrap justify-start gap-4 items-start mt-[17px] w-full max-w-[360px] text-c-b">
                     {mockMenuItems.map((item) => {
                         if (clickedCategory === "전체" || item.type === clickedCategory) {
@@ -45,8 +46,27 @@ function HomePage() {
                         }
                     })}
                 </div>
-
             </div>
+
+            {/* 홈 하단 장바구니 영역 */}
+            <div className="fixed flex-row min-w-[360px] min-h-[227px] justify-center items-center bottom-0 bg-slate-50 p-[15px]  text-c-b">
+                <div className="flex flex-row h-fit w-full justify-between">
+                    <div className="flex flex-row w-fit gap-1 justify-center items-center">
+                        <h6 className="font-semibold text-[13px]">장바구니</h6>
+                        <h6 className="font-bold text-[15px] text-l-y">0</h6>
+                    </div>
+                    <div className="flex flex-row w-fit items-center">
+                        <div className="w-[14px] h-[14px] gap-1">
+                            <img src="/images/icon/replya.png " alt="icon1" />
+                        </div>
+                        <h6 className="text-c-b7 font-normal text-base">초기화</h6>
+                    </div>
+                </div>
+                <div>
+                    
+                </div>
+            </div>
+
         </div>
     );
 }
