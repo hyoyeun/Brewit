@@ -1,6 +1,6 @@
 function FindPasswordPage() {
     return (
-            <div className="flex flex-col justify-center items-center w-full h-fit">
+        <div className="flex flex-col justify-center items-center w-full h-fit">
 
             {/* 안내문구 */}
             <div className="flex flex-col justify-center items-center w-full h-auto my-[53px] p-[16px] max-w-96">
@@ -25,13 +25,13 @@ function FindPasswordPage() {
                         <p className="text-xs hidden" >아이디</p>
                         <input type="text" placeholder="아이디" className="w-[328px]" />
                     </div>
-                         <div>
+                    <div>
                         <p className="text-xs hidden" >메일주소</p>
                         <input type="email" placeholder="메일주소" className="w-[328px]" />
                     </div>
                 </div>
 
-              
+
 
                 {/* 비밀번호 찾기 버튼 */}
                 <div className="flex flex-col mt-[240px]">
