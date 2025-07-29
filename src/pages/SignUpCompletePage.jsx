@@ -19,7 +19,7 @@ function SignUpCompletePage() {
 
                 {/* 로그인하기 버튼 */}
                 <div className="flex flex-col mt-[240px]">
-                    <button>로그인하기</button>
+                    <button className="w-[328px]">로그인하기</button>
                 </div>
             </div>
         </div>

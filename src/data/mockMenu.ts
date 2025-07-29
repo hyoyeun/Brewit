@@ -119,13 +119,12 @@ export const mockMenuItems = [
   },
   {
     id: 10,
-    name_kr: "헤이즐넛 크림 라떼",
-    name_en: "Hazelnut Cream Latte",
-    description: "헤이즐넛 라떼 위에 부드러운 크림이 올라간 시그니처 음료",
-    base: "헤이즐넛 + 크림",
-    image: "/images/헤이즐넛라떼.png", // 같은 이미지 재활용 가능
+    name_kr: "연유라떼",
+    name_en: "Condensed Milk Latte",
+    description: "진한 연유의 달콤함이 더해진 라떼",
+    image: "/images/연유라떼.png",
     isSeasonal: false,
-    hasWhipping: true,
+    hasWhipping: false,
     type: "coffee",
     price: 5800
   }
