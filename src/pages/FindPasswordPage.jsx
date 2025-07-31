@@ -35,7 +35,7 @@ function FindPasswordPage() {
 
                 {/* 비밀번호 찾기 버튼 */}
                 <div className="flex flex-col mt-[240px]">
-                    <button className="w-[328px]">비밀번호 찾기</button>
+                    <button className="w-[328px] min-w-[206px] min-he-[46px]">비밀번호 찾기</button>
                 </div>
             </div>
         </div>

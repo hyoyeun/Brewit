@@ -50,7 +50,7 @@ function SignUpPage() {
 
                 {/* 회원가입 버튼 */}
                 <div className="flex flex-col mt-[240px]">
-                    <button className="w-[328px]">회원가입</button>
+                    <button className="w-[328px] min-w-[206px] min-he-[46px]">회원가입</button>
                 </div>
             </div>
         </div>

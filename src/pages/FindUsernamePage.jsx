@@ -29,7 +29,7 @@ function FindUsernamePage() {
 
                 {/* 로그인 버튼 */}
                 <div className="flex flex-col mt-[240px]">
-                    <button className="w-[328px]">아이디 찾기</button>
+                    <button className="w-[328px] min-w-[206px] min-he-[46px]">아이디 찾기</button>
                 </div>
             </div>
         </div>

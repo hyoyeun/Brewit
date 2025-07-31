@@ -42,7 +42,7 @@ function LoginPage() {
 
         {/* 로그인 버튼 */}
         <div className="flex flex-col mt-[240px]">
-          <button className="w-[328px]">로그인 하기</button>
+          <button className="w-[328px] min-w-[206px] min-he-[46px]">로그인 하기</button>
         </div>
       </div>
     </div>
