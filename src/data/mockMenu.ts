@@ -42,12 +42,19 @@ export const mockMenuItems = [
     name_en: "Croissant",
     description: "겹겹이 쌓인 바삭하고 촉촉한 프렌치 스타일 페이스트리",
     ingredients: ["밀가루", "우유", "버터", "계란"],
-    kcal: 270,
-    sugar: "6g",
-    fat: "14g",
+    servingSize: 110,
+    nutrition: {
+      calories: 270,
+      carbohydrates: 28,
+      sugar: 6,
+      protein: 5,
+      fat: 14,
+      saturatedFat: 8,
+      sodium: 230
+    },
     image: "/images/크로와상.png",
     type: "베이커리",
-    price: 4200
+    price: 4200,
   },
   {
     id: 5,
@@ -55,12 +62,19 @@ export const mockMenuItems = [
     name_en: "Lemon Pound Cake",
     description: "상큼한 레몬향과 진한 버터 풍미가 어우러진 파운드 케이크",
     ingredients: ["밀가루", "달걀", "설탕", "우유", "레몬"],
-    kcal: 300,
-    sugar: "20g",
-    fat: "16g",
+    servingSize: 120,
+    nutrition: {
+      calories: 300,
+      carbohydrates: 32,
+      sugar: 20,
+      protein: 4,
+      fat: 16,
+      saturatedFat: 9,
+      sodium: 180
+    },
     image: "/images/레몬 파운드.png",
     type: "베이커리",
-    price: 5500
+    price: 5500,
   },
   {
     id: 6,
@@ -68,16 +82,19 @@ export const mockMenuItems = [
     name_en: "Chocolate Gelato",
     description: "고급스러운 다크초콜릿으로 만든 초코 젤라또",
     ingredients: ["우유", "코코아", "초콜릿", "설탕"],
-    kcal: 220,
-    carbs: "25g",
-    sugar: "16g",
-    protein: "4g",
-    fat: "12g",
-    saturatedFat: "7g",
-    sodium: "60mg",
+    servingSize: 100,
+    nutrition: {
+      calories: 220,
+      carbohydrates: 25,
+      sugar: 16,
+      protein: 4,
+      fat: 12,
+      saturatedFat: 7,
+      sodium: 60
+    },
     image: "/images/초코젤라또.png",
     type: "젤라또",
-    price: 5500
+    price: 5500,
   },
   {
     id: 7,
@@ -88,7 +105,7 @@ export const mockMenuItems = [
     image: "/images/로즈베리티.png",
     isSeasonal: true,
     hasWhipping: false,
-    type: "noncoffee",
+    type: "논커피",
     price: 4800
   },
   {
@@ -97,25 +114,41 @@ export const mockMenuItems = [
     name_en: "Vanilla Gelato",
     description: "부드럽고 진한 바닐라 향의 정통 이탈리안 젤라또",
     ingredients: ["우유", "바닐라빈", "설탕", "크림"],
-    kcal: 190,
-    sugar: "15g",
-    fat: "9g",
+    servingSize: 100,
+    nutrition: {
+      calories: 190,
+      carbohydrates: 22,
+      sugar: 15,
+      protein: 4,
+      fat: 9,
+      saturatedFat: 5,
+      sodium: 50
+    },
     image: "/images/바닐라 젤라또.png",
-    type: "gelato",
-    price: 4200
+    type: "젤라또",
+    price: 4200,
+
   },
   {
     id: 9,
-    name_kr: "크로와상",
-    name_en: "Croffle",
-    description: "겉은 바삭하고 속은 촉촉한 크루아상 와플",
-    ingredients: ["밀가루", "버터", "설탕", "계란"],
-    kcal: 320,
-    sugar: "18g",
-    fat: "14g",
-    image: "/images/크로와상.png", // 대체 이미지 사용
-    type: "bakery",
-    price: 5500
+    name_kr: "시나몬롤",
+    name_en: "cinnamon_roll",
+    description: "달콤한 시나몬과 설탕이 가득한 부드러운 시나몬롤",
+    ingredients: ["밀가루", "버터", "설탕", "계피", "우유"],
+    servingSize: 130,
+    nutrition: {
+      calories: 380,
+      carbohydrates: 45,
+      sugar: 25,
+      protein: 6,
+      fat: 18,
+      saturatedFat: 10,
+      sodium: 250
+    },
+    image: "/images/시나몬롤.png", 
+    type: "베이커리",
+    price: 5600,
+
   },
   {
     id: 10,
@@ -125,7 +158,7 @@ export const mockMenuItems = [
     image: "/images/연유라떼.png",
     isSeasonal: false,
     hasWhipping: false,
-    type: "coffee",
+    type: "커피",
     price: 5800
   }
 

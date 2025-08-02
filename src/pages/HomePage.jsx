@@ -1,11 +1,20 @@
 import { useState } from "react"
 import { mockMenuItems } from "../data/mockMenu"
 import { mockCartItems } from "../data/mockCart";
+import { useNavigate } from "react-router-dom";
 
 function HomePage() {
     // 현재 바인딩을 통해 처리했으나 추후 db데이터 활용해야함.  
     const [category, setCategory] = useState(["전체", "커피", "논커피", "젤라또", "베이커리"]);
     const [clickedCategory, setClickedCategory] = useState('전체');
+
+    const navigate = useNavigate();
+
+    const handleClick = (id) => {
+        navigate(`/product/${id}`);
+    };
+
+
     return (
         <div className="flex flex-col items-center w-full h-fit">
             {/* 메뉴 카테고리 선택 */}
@@ -30,7 +39,7 @@ function HomePage() {
                     {mockMenuItems.map((item) => {
                         if (clickedCategory === "전체" || item.type === clickedCategory) {
                             return (
-                                <div key={item.id} className="flex flex-col min-h-[147px] min-w-[106px]">
+                                <div key={item.id} onClick={() => handleClick(item.id)} className="flex flex-col min-h-[147px] min-w-[106px]">
                                     <div className="min-h-[106px] max-w-[106px] bg-ba-1 rounded">
                                         <img src={item.image} alt={item.name_kr} />
                                     </div>
