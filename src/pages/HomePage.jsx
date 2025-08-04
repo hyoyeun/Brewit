@@ -110,8 +110,8 @@ function HomePage() {
                             return sum + item.price * item.count;
                         }, 0).toLocaleString()}원</p>
                     </div>
-                    <div className="flex w-[206px] h-[46px]">
-                        <button className=" bg-l-y">주문하기</button>
+                    <div className="flex">
+                        <button className="w-[206px] h-[46px] bg-l-y font-bold text-[15px] ">주문하기</button>
                     </div>
                 </div>
             </div>

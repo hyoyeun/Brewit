@@ -63,7 +63,7 @@ export const mockMenuItems = [
     description: "상큼한 레몬향과 진한 버터 풍미가 어우러진 파운드 케이크",
     ingredients: ["밀가루", "달걀", "설탕", "우유", "레몬"],
     servingSize: 120,
-    nutrition: {
+    nutrition : {
       calories: 300,
       carbohydrates: 32,
       sugar: 20,
@@ -146,7 +146,7 @@ export const mockMenuItems = [
       sodium: 250
     },
     image: "/images/시나몬롤.png",
-    tyep: "베이커리",
+    type: "베이커리",
     price: 5600,
 
   },

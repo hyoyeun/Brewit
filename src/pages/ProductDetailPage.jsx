@@ -51,7 +51,7 @@ function ProductDetailPage() {
             {/* 샷 */}
             {product.type === '커피' ?
                 <div className="flex flex-row min-w-[328px] w-[40vw] justify-between pt-[18px] pb-[18px] items-center">
-                    <div className="flex min-w-[50px] font-semibold text-[15px] text-c-b8 items-start ">
+                    <div className="flex min-w-[50px] font-semibold text-[15px] text-c-b8 items-start overflow-hidden">
                         <p>샷</p>
                     </div>
                     <div className="flex w-fit font-normal text-[13px] text-c-b6">
@@ -70,7 +70,7 @@ function ProductDetailPage() {
                 <>
                     <div className="fixed inset-0 bg-black opacity-50 z-10"></div>
                     <div className="fixed  flex flex-col bottom-0 min-h-[207px] min-w-[360px] w-full z-20 bg-white opacity-100 items-center p-4 gap-4">
-                        <div className="flex flex-row min-w-[360px] w-[40vw] justify-between items-start">
+                        <div className="flex flex-row min-w-[328px] w-[40vw] justify-between items-start">
                             <div className="flex flex-col">
                                 <p className="font-semibold text-lg ">샷</p>
                                 <p className="font-normal text-[13px] text-c-b6">에스프레소를 커스텀으로 즐겨보세요!</p>
@@ -79,7 +79,7 @@ function ProductDetailPage() {
                                 <img src="/images/icon/close.svg" alt="closeIcon" />
                             </div>
                         </div>
-                        <div className="flex flex-row min-w-[360px] w-[40vw] justify-between">
+                        <div className="flex flex-row  min-w-[328px] w-[40vw] justify-between">
                             <div className="text-sm font-bold ">
                                 <p>에스프레소 샷</p>
                             </div>
@@ -90,7 +90,7 @@ function ProductDetailPage() {
                             </div>
                         </div>
                         <div>
-                            <button className="min-w-[360px] mt-[16px]  w-[40vw] h-[46px] bg-l-y font-bold text-[15px]" onClick={() => setIsOpen(null)}>적용하기</button>
+                            <button className="min-w-[328px] mt-[16px]  w-[40vw] h-[46px] bg-l-y font-bold text-[15px]" onClick={() => setIsOpen(null)}>적용하기</button>
                         </div>
                     </div>
                 </>
@@ -118,7 +118,7 @@ function ProductDetailPage() {
                 <>
                     <div className="fixed inset-0 bg-black opacity-50 z-10"></div>
                     <div className="fixed  flex flex-col bottom-0 min-h-[207px] min-w-[360px] w-full z-20 bg-white opacity-100 items-center p-4 gap-4">
-                        <div className="flex flex-row min-w-[360px] w-[40vw] justify-between items-start">
+                        <div className="flex flex-row  min-w-[328px] w-[40vw] justify-between items-start">
                             <div className="flex flex-col">
                                 <p className="font-semibold text-lg ">우유</p>
                             </div>
@@ -126,7 +126,7 @@ function ProductDetailPage() {
                                 <img src="/images/icon/close.svg" alt="closeIcon" />
                             </div>
                         </div>
-                        <div className="flex flex-row min-w-[360px] w-[40vw] min-h-[83px] justify-between flex-wrap gap-1">
+                        <div className="flex flex-row  min-w-[328px] w-[40vw] min-h-[83px] justify-between flex-wrap gap-1">
                             {typeOfMile.map((item) => (
                                 <div onClick={() => setClickedMilk(item.name_kr)}
                                     key={item.key} className={`flex flex-col min-w-[162px] w-[49%] min-h-[59px] bg-cb-b rounded justify-center items-center p-2 ${clickedMilk === item.name_kr ? "border border-solid rounded-[4px] shadow-[0_0_4px_#13131340] border-[#13131340]" : " "} `}>
@@ -137,7 +137,7 @@ function ProductDetailPage() {
                             ))}
                         </div>
                         <div>
-                            <button className="min-w-[360px] mt-[16px]  w-[40vw] h-[46px] bg-l-y font-bold text-[15px]" onClick={() => setIsOpen(null)}>적용하기</button>
+                            <button className="min-w-[328px] mt-[16px]  w-[40vw] h-[46px] bg-l-y font-bold text-[15px]" onClick={() => setIsOpen(null)}>적용하기</button>
                         </div>
                     </div>
                 </>
@@ -165,7 +165,7 @@ function ProductDetailPage() {
                 <>
                     <div className="fixed inset-0 bg-black opacity-50 z-10"></div>
                     <div className="fixed  flex flex-col bottom-0 min-h-[207px] min-w-[360px] w-full z-20 bg-white opacity-100 items-center p-4 gap-4">
-                        <div className="flex flex-row min-w-[360px] w-[40vw] justify-between items-start">
+                        <div className="flex flex-row  min-w-[328px] w-[40vw] justify-between items-start">
                             <div className="flex flex-col">
                                 <p className="font-semibold text-lg ">시럽</p>
                             </div>
@@ -173,7 +173,7 @@ function ProductDetailPage() {
                                 <img src="/images/icon/close.svg" alt="closeIcon" />
                             </div>
                         </div>
-                        <div className="flex flex-col min-w-[360px] w-[40vw] gap-2">
+                        <div className="flex flex-col  min-w-[328px] w-[40vw] gap-2">
                             <p className="font-normal text-[12px] text-c-b6">추가옵션</p>
                             <div className="flex flex-row justify-between">
                                 <div className="flex text-sm font-normal text-c-b8 items-center">
@@ -298,7 +298,7 @@ function ProductDetailPage() {
                 </div > : null}
 
             {/* 영양정보  */}
-            {(product.tyep === "베이커리" || product.type === "젤라또") ?
+            {(product.type === "베이커리" || product.type === "젤라또") ?
                 <div>
                     <div className="pt-2 flex flex-col min-w-[328px] w-[40vw] h-fit  text-c-b gap-[7px] border-t-[rgba(19,19,19,0.2)] border-t-[1px]">
                         <h6 className="font-semibold text-[15px]">영양정보</h6>
