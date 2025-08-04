@@ -145,8 +145,8 @@ export const mockMenuItems = [
       saturatedFat: 10,
       sodium: 250
     },
-    image: "/images/시나몬롤.png", 
-    type: "베이커리",
+    image: "/images/시나몬롤.png",
+    tyep: "베이커리",
     price: 5600,
 
   },
