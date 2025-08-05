@@ -1,7 +1,8 @@
 import { useState } from "react"
 import { coffeeBeans } from "../data/coffeeBeans";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { mockMenuItems } from "../data/mockMenu";
+
 
 function ProductDetailPage() {
 
@@ -20,10 +21,13 @@ function ProductDetailPage() {
     const [clickedWhipping, setClickedWipping] = useState('기본')
 
     const product = mockMenuItems.find(item => item.id === Number(id));
+
+    const navigate = useNavigate();
     if (!product) return <div>상품을 찾을 수 없습니다.</div>
 
     return (
-        <div className={`flex flex-col w-full h-fit justify-center items-center gap-4 `}>
+        <div className={`flex flex-col w-full h-fit justify-center items-center gap-4 ${(product.name_kr.includes('라떼') && product.type === '논커피') ? 'mb-80' : null} ${product.type === '논커피' ? 'mb-64' : null
+            } `}>
             {/* 이미지 & 메뉴 설명 */}
             <div className="flex flex-row min-w-[360px] h-fit justify-center items-center flex-wrap">
 
@@ -42,7 +46,7 @@ function ProductDetailPage() {
                 <div className="pt-3 pb-3 border-t-[1px] border-t-[rgba(19,19,19,0.2)] ">
                     <div className="flex flex-row min-w-[328px] w-[40vw] min-h-[45px] bg-l-g rounded-[68px] justify-center items-center ">
                         <button onClick={() => setClickedIsTemperatura('HOT')} className={`appearance-none box-border p-0 overflow-hidden flex flex-row min-w-[158px] min-h-[34px] w-[48%] rounded-[68px] justify-center items-center leading-[34px]  font-semibold text-base ${clickIsTemperatura === "HOT" ? "bg-white text-btn_f_r" : "bg-l-g text-c-b3"} `}>HOT</button>
-                        <button onClick={() => setClickedIsTemperatura('ICED')} className={`appearance-none box-border p-0 overflow-hidden flex flex-row min-w-[158px] min-h-[34px] w-[48%] rounded-[68px] justify-center items-center leading-[34px] font-semibold text-base  ${clickIsTemperatura === "ICED" ? "bg-white text-btn_f_b " : "bg-l-g text-c-b3"}`}>ICED</button>
+                        <button onClick={() => setClickedIsTemperatura('ICED')} className={`appearance-none box-border p-0 overflow -hidden flex flex-row min-w-[158px] min-h-[34px] w-[48%] rounded-[68px] justify-center items-center leading-[34px] font-semibold text-base  ${clickIsTemperatura === "ICED" ? "bg-white text-btn_f_b " : "bg-l-g text-c-b3"} `}>ICED</button>
                     </div>
                 </div>
                 : null}
@@ -116,7 +120,7 @@ function ProductDetailPage() {
 
             {(isOpen === 'milk' && product.name_kr.includes('라떼')) && (
                 <>
-                    <div className="fixed inset-0 bg-black opacity-50 z-10"></div>
+                    <div className={`fixed inset - 0 bg - black opacity - 50 z - 10`}></div>
                     <div className="fixed  flex flex-col bottom-0 min-h-[207px] min-w-[360px] w-full z-20 bg-white opacity-100 items-center p-4 gap-4">
                         <div className="flex flex-row  min-w-[328px] w-[40vw] justify-between items-start">
                             <div className="flex flex-col">
@@ -129,7 +133,7 @@ function ProductDetailPage() {
                         <div className="flex flex-row  min-w-[328px] w-[40vw] min-h-[83px] justify-between flex-wrap gap-1">
                             {typeOfMile.map((item) => (
                                 <div onClick={() => setClickedMilk(item.name_kr)}
-                                    key={item.key} className={`flex flex-col min-w-[162px] w-[49%] min-h-[59px] bg-cb-b rounded justify-center items-center p-2 ${clickedMilk === item.name_kr ? "border border-solid rounded-[4px] shadow-[0_0_4px_#13131340] border-[#13131340]" : " "} `}>
+                                    key={item.key} className={`flex flex-col min-w-[162px] w-[49 %] min-h-[59px] bg-cb-b rounded justify-center items-center p-2 ${clickedMilk === item.name_kr ? "border border-solid rounded-[4px] shadow-[0_0_4px_#13131340] border-[#13131340]" : " "} `}>
                                     <p className="font-semibold text-sm">{item.name_kr}</p>
                                     <p className="font-normal text-[13px] text-c-b6">{item.name_en}</p>
                                     <p className="font-normal text-[13px] text-c-b6">+{item.price}원</p>
@@ -256,7 +260,7 @@ function ProductDetailPage() {
                         <div className="flex flex-row min-w-[360px] w-[40vw] min-h-[41px] justify-between flex-wrap gap-1">
                             {whippingAmout.map((item) => (
                                 <div onClick={() => setClickedWipping(item)}
-                                    key={item} className={`flex flex-col min-w-[80px] w-[24%] min-h-[41px] bg-cb-b rounded justify-center items-center p-1 ${clickedWhipping === item ? "border border-solid rounded-[4px] shadow-[0_0_4px_#13131340] border-[#13131340]" : " "} `}>
+                                    key={item} className={`flex flex-col min-w -[80px] w-[24%] min-h-[41px] bg-cb-b rounded justify-center items-center p-1 ${clickedWhipping === item ? "border border-solid rounded-[4px] shadow-[0_0_4px_#13131340] border-[#13131340]" : " "} `}>
                                     <p className="font-semibold text-sm">{item}</p>
                                 </div>
                             ))}
@@ -270,12 +274,12 @@ function ProductDetailPage() {
             )}
             {/* 원두선택 */}
             {product.type === '커피' ?
-                <div className="flex flex-col min-w-[328px] w-[40vw] h-[500px] text-c-b gap-[7px] ">
+                <div className="flex flex-col min-w-[328px] w-[40vw] h-[500px] text-c-b gap-[7px] mb-5">
                     <h6 className="font-semibold text-[15px]">원두</h6>
                     <div className="flex flex-row w-full h-fit justify-around items-center cursor-pointer" >
                         {coffeeBeans.map((item, index) => (
                             <div onClick={() => setCoffeeBeanse(item.nameEn)}
-                                key={index} className={`flex flex-col min-w-[106px] w-[33%] min-h-[59px] bg-cb-b rounded justify-center items-center ${clickedCoffeeBeans === item.nameEn ? "border border-solid rounded-[4px] shadow-[0_0_4px_#13131340] border-[#13131340]" : " "} `}>
+                                key={index} className={`flex flex-col min-w-[106px] w-[33 %] min-h-[59px] bg-cb-b rounded justify-center items-center ${clickedCoffeeBeans === item.nameEn ? "border border-solid rounded-[4px] shadow-[0_0_4px_#13131340] border-[#13131340]" : " "} `}>
                                 <p className="font-semibold text-sm">{item.nameKo}</p>
                                 <p className="font-normal text-[13px] text-c-b6">{item.nameEn}</p>
                             </div>
@@ -299,7 +303,7 @@ function ProductDetailPage() {
 
             {/* 영양정보  */}
             {(product.type === "베이커리" || product.type === "젤라또") ?
-                <div>
+                <div className="mb-52">
                     <div className="pt-2 flex flex-col min-w-[328px] w-[40vw] h-fit  text-c-b gap-[7px] border-t-[rgba(19,19,19,0.2)] border-t-[1px]">
                         <h6 className="font-semibold text-[15px]">영양정보</h6>
                         <p className="font-normal text-[15px] text-c-b7">1회 제공량 : {product.servingSize}g</p>
@@ -338,7 +342,135 @@ function ProductDetailPage() {
                     </div>
                 </div>
                 : null}
+            {/* 하단 옵션 및 주문 상태 확인 */}
+            {isOpen === null ?
+                <div className="fixed bottom-0 flex flex-col min-w-[400px] w-full min-h-[193px] bg-white border-t-[1px] border-t-[rgba(19,19,19)] p-4 text-c-b6 font-semibold text-[13px] gap-3 justify-center items-center">
+                    <div className="min-w-[400px] w-[40vw]">
+                        <p>변경된 옵션</p>
+                    </div>
 
+                    {/* 온도 */}
+                    {(product.type === '커피' || product.type === '논커피') ?
+                        <div className="flex flex-row items-center min-w-[400px] w-[40vw] border-b-[1px] border-b-[rgba(19,19,19,0.2)] pb-1">
+                            <div className="flex w-16 ">
+                                <p>온도</p>
+                            </div>
+                            <div className="flex text-c-b">
+                                <p>{clickIsTemperatura}</p>
+                            </div>
+                        </div>
+
+                        : null}
+                    {/* 샷 */}
+                    {product.type === '커피' ?
+                        <div className="flex flex-row min-w-[400px] w-[40vw] border-b-[1px] border-b-[rgba(19,19,19,0.2)] pb-1">
+                            <div className="flex flex-row">
+                                <div className="w-16 ">
+                                    <p>샷</p>
+                                </div>
+                                <div className="text-c-b">
+                                    <p>에스프레소 3샷</p>
+                                </div>
+                            </div>
+                            <div className="ml-auto text-c-b">
+                                <p>+800원</p>
+                            </div>
+                        </div>
+
+                        : null
+                    }
+                    {/* 우유 */}
+                    {product.name_kr.includes('라떼') ?
+                        <div className="flex flex-row min-w-[400px] w-[40vw] border-b-[1px] border-b-[rgba(19,19,19,0.2)] pb-1">
+                            <div className="flex flex-row">
+                                <div className="w-16 ">
+                                    <p>우유</p>
+                                </div>
+                                <div className="text-c-b">
+                                    <p>{clickedMilk}</p>
+                                </div>
+                            </div>
+                            <div className="ml-auto text-c-b">
+                                <p>+800원</p>
+                            </div>
+                        </div>
+
+                        : null
+                    }
+                    {/* 시럽 */}
+                    {(product.type === "커피" || product.type === "논커피") ?
+                        <div className="flex flex-row min-w-[400px] w-[40vw] border-b-[1px] border-b-[rgba(19,19,19,0.2)] pb-1">
+                            <div className="flex flex-row">
+                                <div className="w-16 ">
+                                    <p>시럽</p>
+                                </div>
+                                <div className="text-c-b">
+                                    <p>기본 시럽</p>
+                                </div>
+                            </div>
+                            <div className="ml-auto text-c-b">
+                                <p>+0원</p>
+                            </div>
+                        </div>
+
+                        : null
+                    }
+                    {/* 휘핑 크림*/}
+                    {product.hasWhipping === true ?
+                        <div className="flex flex-row min-w-[400px] w-[40vw] border-b-[1px] border-b-[rgba(19,19,19,0.2)] pb-1">
+                            <div className="flex flex-row">
+                                <div className="w-16 ">
+                                    <p>휘핑 크림</p>
+                                </div>
+                                <div className="text-c-b">
+                                    <p>{clickedWhipping}</p>
+                                </div>
+                            </div>
+                            <div className="ml-auto text-c-b">
+                                <p>+0원</p>
+                            </div>
+                        </div>
+
+                        : null
+                    }
+                    {/* 갯수 및 가격 */}
+                    <div className="flex flex-row min-w-[400px] w-[40vw] justify-between mt-2 text-c-b">
+                        <div className="flex flex-row justify-around items-center gap-1">
+                            <button className="rounded-full w-6 h-6 flex items-center bg-white border-solid border-[1px] border-c-b2 justify-center">-</button>
+                            <p className="font-normal text-[14px]">1</p>
+                            <button className="rounded-full w-6 h-6 flex items-center bg-white border-solid border-[1px] border-c-b justify-center">+</button>
+                        </div>
+                        <div className="flex items-center text-xl font-bold">
+                            <p>{product.price.toLocaleString()}원</p>
+                        </div>
+                    </div>
+                    <div className="mt-4 pb-3 min-w-[400px] w-[40vw]" >
+                        <button className="w-full min-h-[46px] bg-l-y text-[15px] font-bold text-c-b" onClick={() => { setIsOpen('addToCart') }}>메뉴담기</button>
+                    </div>
+                </div>
+                : null
+            }
+
+            {/* 장바구니 추가 완료 */}
+            {isOpen == 'addToCart' && (
+                <div className="fixed bottom-0 flex flex-col min-w-[400px] max-w-full min-h-[164px] bg-white border-t-[1px] border-t-[rgba(19,19,19)] p-4 text-c-b font-semibold">
+                    <div className="flex flex-row min-w-[360px] w-[40vw] justify-between items-start">
+                        <div className="flex flex-col">
+                            <p className="font-semibold text-lg ">장바구니에 추가되었어요</p>
+                        </div>
+                        <div className="flex min-w-5 min-h-5 cursor-pointer" onClick={() => setIsOpen(null)}>
+                            <img src="/images/icon/close.svg" alt="closeIcon" />
+                        </div>
+                    </div>
+                    <div className="flex flex-row min-w-[360px] w-[40vw] justify-between items-center gap-2 mt-12">
+                        <button className="bg-white border-[1px] border-[#FFC21C] w-[50%] min-h-[46px]" onClick={() => navigate('/cart')}>
+                            장바구니로 이동</button>
+                        <button className="bg-l-y w-[50%] min-h-[46px]" onClick={() => navigate('/home')}>다른 메뉴 더 보기</button>
+                    </div>
+                </div>
+            )
+
+            }
 
         </div >
     )

@@ -11,7 +11,7 @@ export const mockCartItems = [
         type: "커피",
         price: 5000,
         count: 1,
-        temperatura: "Iced",
+        temperatura: "ICED",
         syrup: {
             "헤이즐넛 시럽": 2,
         },
@@ -31,7 +31,7 @@ export const mockCartItems = [
         type: "커피",
         price: 2500,
         count: 1,
-        temperatura: "Iced",
+        temperatura: "HOT",
         addSrup: {
             "바닐라 시럽": 1
         },
@@ -48,7 +48,7 @@ export const mockCartItems = [
         type: "논커피",
         price: 5400,
         count: 1,
-        temperatura: "Iced",
+        temperatura: "ICED",
 
     },
     {
