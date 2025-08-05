@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { mockCartItems } from "../data/mockCart";
+import { useNavigate } from "react-router-dom";
 
 function CartPage() {
     const [category, setCategory] = useState(["전체", "커피", "논커피", "젤라또", "베이커리"]);
@@ -8,6 +9,7 @@ function CartPage() {
     const visibleItems = mockCartItems.filter(
         item => clickedCategory === "전체" || item.type === clickedCategory
     );
+    const navigation = useNavigate();
 
     return (
         <div className={`flex flex-col w-full h-fit items-center gap-4 mt-10 text-c-b`}>
@@ -108,7 +110,7 @@ function CartPage() {
                     <p className="text-xl font-bold">{visibleItems.reduce((acc, item) => acc + item.price * item.count, 0).toLocaleString()}원</p>
                 </div>
                 <div className="mt-4 pb-3 min-w-[360px] w-[40vw]" >
-                    <button className="w-full min-h-[46px] bg-l-y text-[15px] font-bold text-c-b" onClick={() => { setIsOpen('addToCart') }}>주문하기</button>
+                    <button className="w-full min-h-[46px] bg-l-y text-[15px] font-bold text-c-b" onClick={() => { navigation('/order') }}>주문하기</button>
                 </div>
             </div>
         </div >
