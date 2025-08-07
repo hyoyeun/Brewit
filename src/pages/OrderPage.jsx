@@ -1,6 +1,7 @@
 import { useState } from "react"
 import { mockCartItems } from "../data/mockCart"
 import CartPage from './CartPage';
+import { useNavigate } from "react-router-dom";
 
 
 function OrderPage() {
@@ -38,6 +39,8 @@ function OrderPage() {
             )
         );
     };
+
+    const navigation = useNavigate();
 
     const selectPointOption = orderOptions.find(i => i.name === "토스 포인트");
     return (
@@ -216,7 +219,7 @@ function OrderPage() {
                         </div>
                     </div>
                     <div>
-                        <button className="w-full min-h-[46px] bg-l-y text-[15px] font-bold text-c-b">{(mockCartItems.reduce((acc, item) => acc + item.price * item.count, 0)
+                        <button className="w-full min-h-[46px] bg-l-y text-[15px] font-bold text-c-b" onClick={() => navigation('/order/complete')}>{(mockCartItems.reduce((acc, item) => acc + item.price * item.count, 0)
                             - (selectPointOption.option === "토스포인트" ? 1000 :
                                 selectPointOption.option === "매장포인트" ? 3000 : 0)
                         ).toLocaleString()}원 결제하기</button>

@@ -104,7 +104,7 @@ function CartPage() {
                 })
                 }
             </div>
-            <div className="fixed bottom-0 min-h-[130px] flex flex-col items-center min-w-[360px] bg-white h-fit w-[40vw] border-t-[1px] border-t-[rgba(19,19,19)] text-c-b gap-1 justify-center overflow-hidden">
+            <div className="fixed bottom-0 min-h-[130px] flex flex-col items-center min-w-[360px] bg-white h-fit w-full border-t-[1px] border-t-[rgba(19,19,19)] text-c-b gap-1 justify-center overflow-hidden">
                 <div className="flex flex-row justify-between min-w-[360px] h-fit w-[40vw] text-[13px] font-normal items-center">
                     <p>전체 메뉴 총 {visibleItems.length}개</p>
                     <p className="text-xl font-bold">{visibleItems.reduce((acc, item) => acc + item.price * item.count, 0).toLocaleString()}원</p>

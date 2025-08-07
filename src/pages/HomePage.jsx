@@ -18,12 +18,12 @@ function HomePage() {
     return (
         <div className="flex flex-col items-center w-full h-fit">
             {/* 메뉴 카테고리 선택 */}
-            <div className="max-w-[360px] overflow-x-auto">
+            <div className="min-w-[360px] w-[40vw] overflow-x-auto">
                 <div className="flex flex-row items-center ">
                     {category.map((item, index) => (
                         <div
                             key={index}
-                            className={`flex justify-center items-center min-w-[82px] min-h-[34px] cursor-pointer ${clickedCategory === item ? "bg-l-y" : "bg-l-g"}`}
+                            className={`flex justify-center items-center min-w-[82px] min-h-[34px] w-[25%] cursor-pointer ${clickedCategory === item ? "bg-l-y" : "bg-l-g"}`}
                             style={{ marginLeft: index === 0 ? "0px" : "-1px" }}
                             onClick={() => setClickedCategory(item)}
                         >
@@ -34,14 +34,14 @@ function HomePage() {
             </div>
 
             {/* 홈 메뉴 영역 */}
-            <div className="flex flex-row flex-wrap justify-start items-start mt-[17px] w-[360px] h-fit text-c-b pb-[250px]">
-                <div className="flex flex-row flex-wrap justify-start gap-4 items-start mt-[17px] w-full max-w-[360px] text-c-b">
+            <div className="flex flex-row flex-wrap justify-start items-start mt-[17px] min-w-[360px] h-fit text-c-b pb-[250px]">
+                <div className="flex flex-row flex-wrap justify-between gap-4 mt-[17px] min-w-[360px] w-[40vw] text-c-b">
                     {mockMenuItems.map((item) => {
                         if (clickedCategory === "전체" || item.type === clickedCategory) {
                             return (
-                                <div key={item.id} onClick={() => handleClick(item.id)} className="flex flex-col min-h-[147px] min-w-[106px]">
-                                    <div className="min-h-[106px] max-w-[106px] bg-ba-1 rounded">
-                                        <img src={item.image} alt={item.name_kr} />
+                                <div key={item.id} onClick={() => handleClick(item.id)} className={`flex flex-col min-h-[147px] min-w-[106px] w-[30%]`}>
+                                    <div className="min-h-[106px] min-w-[106px] w-full bg-ba-1 rounded">
+                                        <img className="w-full h-full" src={item.image} alt={item.name_kr} />
                                     </div>
                                     <div className="p-1">
                                         <h6 className="font-bold text-sm">{item.name_kr}</h6>
@@ -59,9 +59,9 @@ function HomePage() {
             </div>
 
             {/* 홈 하단 장바구니 영역 */}
-            <div className="fixed flex-row min-w-[360px] min-h-[227px] justify-center items-center bottom-0 bg-white p-[15px]  text-c-b border-t-[#131313] border-t-[1px]">
+            <div className="fixed flex flex-col min-w-[360px] min-h-[227px] w-full justify-center items-center bottom-0 bg-white p-[15px]  text-c-b border-t-[#131313] border-t-[1px]">
                 {/* 하단 장바구니 메인 정보  */}
-                <div className="flex flex-row h-fit w-full justify-between">
+                <div className="flex flex-row h-fit min-w-[360px] w-[40vw] justify-between">
                     <div className="flex flex-row w-fit gap-1 justify-center items-center">
                         <h6 className="font-semibold text-[13px]">장바구니</h6>
                         <h6 className="font-bold text-[15px] text-l-y">0</h6>
@@ -74,7 +74,7 @@ function HomePage() {
                     </div>
                 </div>
                 {/* 하단 장바구니 아이템 목록 */}
-                <div className="flex flex-row max-w-[360px] min-h-[90px] overflow-x-auto overflow-y-hidden" >
+                <div className="flex flex-row min-w-[360px] w-[40vw] min-h-[90px] overflow-x-auto overflow-y-hidden" >
                     {mockCartItems.map((item) => (
                         <div className="flex flex-row min-w-[207px] min-h-[90px] items-center gap-3 bg-ba-1 rounded-lg p-3 justify-between mr-2 " key={item.id}>
                             <div className="flex h-[71px] w-[71px]">
@@ -104,7 +104,7 @@ function HomePage() {
                     ))}
                 </div>
                 {/* 하단 장바구니 총금액 및 주문하기 버튼 */}
-                <div className="flex flex-row h-fit max-w-[360px]  justify-between items-center mt-7">
+                <div className="flex flex-row h-fit min-w-[360px] w-[40vw]  justify-between items-center mt-7">
                     <div className="w-fit h-fit">
                         <p className="text-lg font-bold">총 {mockCartItems.reduce((sum, item) => {
                             return sum + item.price * item.count;

@@ -344,14 +344,14 @@ function ProductDetailPage() {
                 : null}
             {/* 하단 옵션 및 주문 상태 확인 */}
             {isOpen === null ?
-                <div className="fixed bottom-0 flex flex-col min-w-[400px] w-full min-h-[193px] bg-white border-t-[1px] border-t-[rgba(19,19,19)] p-4 text-c-b6 font-semibold text-[13px] gap-3 justify-center items-center">
-                    <div className="min-w-[400px] w-[40vw]">
+                <div className="fixed bottom-0 flex flex-col min-w-[360px] w-full min-h-[193px] bg-white border-t-[1px] border-t-[rgba(19,19,19)] p-4 text-c-b6 font-semibold text-[13px] gap-3 justify-center items-center">
+                    <div className="min-w-[360px] w-[40vw]">
                         <p>변경된 옵션</p>
                     </div>
 
                     {/* 온도 */}
                     {(product.type === '커피' || product.type === '논커피') ?
-                        <div className="flex flex-row items-center min-w-[400px] w-[40vw] border-b-[1px] border-b-[rgba(19,19,19,0.2)] pb-1">
+                        <div className="flex flex-row items-center min-w-[360px] w-[40vw] border-b-[1px] border-b-[rgba(19,19,19,0.2)] pb-1">
                             <div className="flex w-16 ">
                                 <p>온도</p>
                             </div>
@@ -363,7 +363,7 @@ function ProductDetailPage() {
                         : null}
                     {/* 샷 */}
                     {product.type === '커피' ?
-                        <div className="flex flex-row min-w-[400px] w-[40vw] border-b-[1px] border-b-[rgba(19,19,19,0.2)] pb-1">
+                        <div className="flex flex-row min-w-[360px] w-[40vw] border-b-[1px] border-b-[rgba(19,19,19,0.2)] pb-1">
                             <div className="flex flex-row">
                                 <div className="w-16 ">
                                     <p>샷</p>
@@ -381,7 +381,7 @@ function ProductDetailPage() {
                     }
                     {/* 우유 */}
                     {product.name_kr.includes('라떼') ?
-                        <div className="flex flex-row min-w-[400px] w-[40vw] border-b-[1px] border-b-[rgba(19,19,19,0.2)] pb-1">
+                        <div className="flex flex-row min-w-[360px] w-[40vw] border-b-[1px] border-b-[rgba(19,19,19,0.2)] pb-1">
                             <div className="flex flex-row">
                                 <div className="w-16 ">
                                     <p>우유</p>
@@ -399,7 +399,7 @@ function ProductDetailPage() {
                     }
                     {/* 시럽 */}
                     {(product.type === "커피" || product.type === "논커피") ?
-                        <div className="flex flex-row min-w-[400px] w-[40vw] border-b-[1px] border-b-[rgba(19,19,19,0.2)] pb-1">
+                        <div className="flex flex-row min-w-[360px] w-[40vw] border-b-[1px] border-b-[rgba(19,19,19,0.2)] pb-1">
                             <div className="flex flex-row">
                                 <div className="w-16 ">
                                     <p>시럽</p>
@@ -417,7 +417,7 @@ function ProductDetailPage() {
                     }
                     {/* 휘핑 크림*/}
                     {product.hasWhipping === true ?
-                        <div className="flex flex-row min-w-[400px] w-[40vw] border-b-[1px] border-b-[rgba(19,19,19,0.2)] pb-1">
+                        <div className="flex flex-row min-w-[360px] w-[40vw] border-b-[1px] border-b-[rgba(19,19,19,0.2)] pb-1">
                             <div className="flex flex-row">
                                 <div className="w-16 ">
                                     <p>휘핑 크림</p>
@@ -434,7 +434,7 @@ function ProductDetailPage() {
                         : null
                     }
                     {/* 갯수 및 가격 */}
-                    <div className="flex flex-row min-w-[400px] w-[40vw] justify-between mt-2 text-c-b">
+                    <div className="flex flex-row min-w-[360px] w-[40vw] justify-between mt-2 text-c-b">
                         <div className="flex flex-row justify-around items-center gap-1">
                             <button className="rounded-full w-6 h-6 flex items-center bg-white border-solid border-[1px] border-c-b2 justify-center">-</button>
                             <p className="font-normal text-[14px]">1</p>
@@ -444,7 +444,7 @@ function ProductDetailPage() {
                             <p>{product.price.toLocaleString()}원</p>
                         </div>
                     </div>
-                    <div className="mt-4 pb-3 min-w-[400px] w-[40vw]" >
+                    <div className="mt-4 pb-3 min-w-[360px] w-[40vw]" >
                         <button className="w-full min-h-[46px] bg-l-y text-[15px] font-bold text-c-b" onClick={() => { setIsOpen('addToCart') }}>메뉴담기</button>
                     </div>
                 </div>
@@ -453,7 +453,7 @@ function ProductDetailPage() {
 
             {/* 장바구니 추가 완료 */}
             {isOpen == 'addToCart' && (
-                <div className="fixed bottom-0 flex flex-col min-w-[400px] max-w-full min-h-[164px] bg-white border-t-[1px] border-t-[rgba(19,19,19)] p-4 text-c-b font-semibold">
+                <div className="fixed bottom-0 flex flex-col min-w-[360px] w-full min-h-[164px] bg-white border-t-[1px] border-t-[rgba(19,19,19)] p-4 text-c-b font-semibold items-center">
                     <div className="flex flex-row min-w-[360px] w-[40vw] justify-between items-start">
                         <div className="flex flex-col">
                             <p className="font-semibold text-lg ">장바구니에 추가되었어요</p>
