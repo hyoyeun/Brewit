@@ -22,6 +22,7 @@ export default {
         'btn_f_b': '#0037ff',
         'cb-b': '#f7f7f7',
         'bg-1': '#f3f3f3',
+        'r': '#ee0000',
 
 
 
