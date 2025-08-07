@@ -279,7 +279,7 @@ function ProductDetailPage() {
                     <div className="flex flex-row w-full h-fit justify-around items-center cursor-pointer" >
                         {coffeeBeans.map((item, index) => (
                             <div onClick={() => setCoffeeBeanse(item.nameEn)}
-                                key={index} className={`flex flex-col min-w-[106px] w-[33 %] min-h-[59px] bg-cb-b rounded justify-center items-center ${clickedCoffeeBeans === item.nameEn ? "border border-solid rounded-[4px] shadow-[0_0_4px_#13131340] border-[#13131340]" : " "} `}>
+                                key={index} className={`flex flex-col min-w-[106px] w-[33%] min-h-[59px] bg-cb-b rounded justify-center items-center ${clickedCoffeeBeans === item.nameEn ? "border border-solid rounded-[4px] shadow-[0_0_4px_#13131340] border-[#13131340]" : " "} `}>
                                 <p className="font-semibold text-sm">{item.nameKo}</p>
                                 <p className="font-normal text-[13px] text-c-b6">{item.nameEn}</p>
                             </div>
