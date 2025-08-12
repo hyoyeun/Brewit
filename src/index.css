@@ -39,3 +39,14 @@ button text {
   color: rgba(19, 19, 19);
   font-size: 15px;
 }
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+  opacity: 0;
+  /* 보이진 않음 */
+  pointer-events: auto;
+  /* 클릭 가능 */
+  position: absolute;
+  /* 아이콘 영역을 넓혀 클릭 잘 잡히게 */
+  inset: 0;
+  /* 전체 영역 클릭해도 달력 뜨게 */
+}

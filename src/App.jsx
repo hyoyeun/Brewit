@@ -17,7 +17,8 @@ import ResetPasswordPage from './pages/ResetPasswordPage'
 import SignUpCompletePage from './pages/SignUpCompletePage'
 import SignUpPage from './pages/SignUpPage'
 import TermsPage from './pages/TermsPage'
-
+import ServiceTerms from './pages/ServiceTerms'
+import PrivacyPolicy from './pages/PrivacyPolicy'
 
 
 function App() {
@@ -42,7 +43,9 @@ function App() {
         <Route path="/order/complete" element={<OrderCompletePage />} />
         <Route path="/orders" element={<OrderHistoryPage />} />
         <Route path="/mypage" element={<MyPage />} />
-        <Route path="/terms" element={<	TermsPage />} />
+        <Route path="/terms" element={<	TermsPage />}/>
+          <Route path="/terms/serviceTerms" element={<	ServiceTerms />} />
+          <Route path="/terms/privacyPolicy" element={< PrivacyPolicy />} />
       </Routes>
     </>
   )
